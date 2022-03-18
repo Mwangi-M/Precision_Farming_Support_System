@@ -1,0 +1,18 @@
+{% extends 'customerpdf/base.html' %}
+
+{% block Title %}
+customers
+{% endblock Title %}
+
+{% block Content %}
+    {% for customer in object_list %}
+        {{ customer }}
+        <a href="{% url 'customerpdf:customer-pdf-view' customer.pk %}"><button class="btn btn-dark">view pdf</button></a>
+        <br>
+        <hr>
+    {% endfor %}
+    {% if not object_list %}
+        <h2 style="font-family: Times New Roman">Sorry {{user.username}}, you do not have any notifications</h2>
+    {%endif%}
+{% endblock Content %}
+

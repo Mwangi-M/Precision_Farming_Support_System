@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+      </style>
+</head>
+<body>
+<h2>{{customer}}</h2>
+    <hr>
+    <h2>{{customer.description}}</h2>
+    <!--if you want the description to be seen exactly as seen in the admin, do the following:
+    after the word 'description', add '|linebreaks'-->
+    <br>
+    <!--type the following under the <br> (just one) tag in the {{ braces to see the urls of the images:
+    customer.normal_image/precision_image, customer.normal_image/precision_image.url
+    and customer.normal_image.path-->
+    <!--    <img src={{customer.precision_map.path}} height="200px">
+    <hr>
+    <img src={{customer.normal_image.path}} height="200px">-->
+<div class="row">
+  <div class="column">
+    <h2> The following Pictures are the image results the system has computed:</h2>
+    <h3>Precision Map:</h3>
+    <img src={{customer.precision_map.path}} height="480px" width="750px">
+  </div>
+    <br>
+  <div class="column">
+     <h3>Actual Map:</h3>
+    <img src={{customer.normal_image.path}} height="480px" width="750px">
+  </div>
+</div>
+<br>
+
+    <h2>The following Table shows a summary of the findings:</h2>
+<table style="width:100%">
+
+  <tr style="padding:5px">
+    <th><h1>COLOR<br>(Findings of the Precision Map above)</h1></th>
+
+    <th><h1>MEANING OF THE COLORS</h1></th>
+    <th><h1>PRESCRIPTION<br>(A guideline on how to handle different areas on your farmland based on different colors)</h1></th>
+  </tr>
+
+  <tr style="text-align:center">
+    <td style="background-color:Yellow"><h2>Yellow</h2></td>
+    <td><h2>Dry vegetation and possibility of pest and disease invasion.</h2></td>
+    <td><h2><br>Apply any of the following:</h2>
+      <ol>
+          <h3>
+              <li> <strong>Kingfog</strong> Insecticide</li>
+              <li> <strong>Malathion</strong> Insecticide</li>
+              <li> <strong>Ethion </strong> Insecticide</li>
+          </h3>
+      </ol>
+      <strong><h2>In addition, look out for the following:</h2></strong>
+      <ol>
+          <h3>
+              <li>Ensure the crops in this area need watering.</li>
+              <li>Spray crop's foliage with water to rejuvenate the crops.</li>
+              <li>Note that over-watering causes yellow or pale green leaves, as well as wilting.</li>
+          </h3>
+      </ol>
+    </td>
+  </tr>
+
+  <tr style="text-align:center">
+    <td style="background-color:Green"><h2>Green</h2></td>
+    <td><h2>Healthy vegetation</h2></td>
+    <td><h2><br>Apply any of the following:</h2>
+      <ol>
+          <h3>
+              <li> <strong>DEET</strong> Repellent</li>
+              <li> <strong>Picaridin</strong> Repellent</li>
+          </h3>
+      </ol>
+    </td>
+  </tr>
+
+  <tr style="text-align:center">
+    <td style="background-color:Red"><h2>Red</h2></td>
+      <td><h2>Healthy vegetation</h2></td>
+    <td><h2><br>Apply any of the following:</h2>
+    <ol>
+        <h3>
+            <li> <strong>DEET</strong> Repellent</li>
+            <li> <strong>Picaridin</strong> Repellent</li>
+        </h3>
+    </ol>
+    </td>
+  </tr>
+
+  <tr style="text-align:center">
+      <td style="background-color:Cyan;padding:15px"><h2>Cyan</h2></td>
+    <td><h2>This area has moist meadows, hydrophobic vegetation or irrigated vegetation.</h2></td>
+    <td><h3>This area already represents watered plantation so  no need to irrigate crops in this section.</h3></td>
+  </tr>
+
+  <tr style="text-align:center">
+    <td style="background-color:Blue;padding:15px"><h2>Blue</h2></td>
+    <td><h2>Represents presence of a water body</h2></td>
+    <td><h2>Can be made useful for irrigation</h2></td>
+  </tr>
+
+  <tr style="text-align:center">
+    <td style="background-color:Magenta;padding:15px"><h2>Magenta</h2></td>
+    <td><h2>Represents areas without vegetation</h2></td>
+    <td><h2>This represents area of land that can be cultivated on</h2></td>
+  </tr>
+
+</table>
+<h2>The products listed in the 'prescription' column can be found in our online shop, you can click on the following link to go to the store: <a href="http://127.0.0.1:8000/store/">Store</a></h2>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<article class="media content-m">
+
+  <div class="media-body">
+      <div class="row">
+        <div class="col-md-12 col-md-offset-1">
+          <div class="well well-sm">
+            {%load crispy_forms_tags %}
+            <legend class="text-center"><h1>Contact Admin</h1></legend>
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary btn-lg">Submit Request</button>
+              </form>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</article>
+
+{% endblock content %}

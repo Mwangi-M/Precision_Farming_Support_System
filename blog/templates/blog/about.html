@@ -1,0 +1,51 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <h3>Welcome {{user.username}}</h3>
+            <hr>
+            <h4><span class="emphasized">Your journey in Precision Farming starts NOW.</span></h4>
+            <hr>
+            <h5>What is Precision Farming?</h5>
+            <ul>
+                <li>It is a farming management concept based on observing,
+                    measuring and responding to inter and intra-field variability in crops.</li>
+            </ul>
+            <img src="https://cropaia.com/wp-content/uploads/2018/08/Precision-agriculture.jpg" width="500" height="350">
+            <hr>
+            <h5>Why Precision Farming?</h5>
+            <ol>
+                <li>
+                    <div align="justify">
+                        <strong>More Cost Efficient farming</strong>
+                        Precision farming aims to reduce a farmer’s expenditure by minimising the need for things like fertiliser, pesticide and herbicide. Over a growing season, grower’s are
+                        seeing significant reductions in the amount of money they are spending on all of the above where technology is using the components sparingly and only where needed.
+                    </div>
+                </li>
+
+                <li>
+                    <div align="justify">
+                        <strong>Higher Yields and more Profitability</strong>
+                            Statistically, a precision farmer will make more money than a traditional farmer. This is for a number of reasons. Their yields are higher because they have improved
+                            growing practices and they are able to sell more produce at the end of the season as a result. They also have less man hours to expend as technology is filling gaps that
+                            workers would have previously filled.
+                    </div>
+                </li>
+
+                <li>
+                    <div align="justify">
+                        <strong>Less Waste</strong>
+                            Lost crops are a nightmare for farmers, and over a growing season there is expectation that a certain number of crops will not see the season through.
+                            Making this worse is that historically storage practices inevitably resulted in further spoilage. With streamlined growing processes and healthier crops,
+                            they have a much better chance of surviving and growing seasons are becoming more sustainable.
+                    </div>
+                </li>
+            </ol>
+            <hr>
+        </div>
+    </article>
+    <hr>
+    <hr>
+
+{% endblock content %}
+

@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+    <article class="media content-section">
+        <div class="media-body">
+        <div class="content-section">
+            <form method = "POST">
+                {% csrf_token %} <!--without the csrf, the form won't work-->
+                <!--fieldset tag is used to group related elements in a form,
+                and a legend will be added for the form
+                side note- form-group is a bootstrap class-->
+                <fieldset class = "form-group">
+                    <h2><legend class="border-bottom mb-4"><ins>Delete Post</ins></legend></h2>
+                    <h2>Are you sure you want to delete this post?</h2>
+                </fieldset>
+                <div class = "form-group">
+                    <button class="btn-outline-danger" type="submit">Yes, Delete</button>
+                    <a class = "btn-outline-secondary" href="{%url 'post-detail' object.id%}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</article>
+
+{% endblock content %}
+
