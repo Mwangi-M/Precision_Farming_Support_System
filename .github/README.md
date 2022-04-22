@@ -81,4 +81,4 @@ I love contributions to my repositories, so please feel free to fix bugs, improv
 ## [LICENSE](LICENSE)
 This project is licensed under the MIT, Collab License.
 
-Copyright (c)2022 [@Mwangi-M]
+Copyright &copy; 2022 [@Mwangi-M]
