@@ -1,6 +1,4 @@
-{% extends "blog/base.html" %}
 {% load static %}
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,21 +22,18 @@
     <link rel="stylesheet" href={% static 'style.css' %}>
     <script src={% static 'main.js' %} defer></script>
 
-    <title>Image cropper</title>
+    <title>Image Cropper</title>
+
   </head>
-
   <body>
-    <article class="media content-section">
-      <div class="media-body">
-        <h3>Crop your image by clicking on the 'Choose file' button</h3>
-        <a href="{%url 'getstarted'%}">Back</a>
-        <a href="{%url 'blog-home'%}">Home</a>
-
-          <div class="container mt-3">
-              {% block content %}
-              {% endblock content %}
-          </div>
-      </div>
-    </article>
+    <div class="container mt-3">
+        {% block content %}
+        {% endblock content %}
+    </div>
   </body>
 </html>
+
+
+
+
+

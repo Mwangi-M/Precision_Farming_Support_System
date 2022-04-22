@@ -1,0 +1,353 @@
+{% load static %} <!--this includes main.css file in addition to the rel stylesheet code below-->
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+
+            <!--beginning of bootstrap-->
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+            <!--end of bootstrap-->
+
+
+            <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+            {% if Title %}
+                <title> Precision Farming - {{ Title }}</title>
+            {% else %}
+                <title> Precision Farming </title>
+            {% endif %}
+            <meta charset="UTF-8">
+
+            <style>
+                body {
+                  background-image:url("../../media/Background.jpg");
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
+                }
+            </style>
+        </head>
+        <body>
+            <header class="site-header">
+                <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand mr-4" href="{% url 'blog-prec' %}">Precision Farming</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarToggle">
+                        <div class="navbar-nav mr-auto">
+                            <a class="nav-item nav-link" href="{% url 'blog-home' %}">Blog</a>
+                            {%if user.is_authenticated%}
+                            <a class="nav-item nav-link" href="{% url 'getstarted' %}">Get Started</a>
+                            {%endif%}
+                            <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+                        </div>
+                        <!-- Navbar Right Side -->
+                        <div class="navbar-nav">
+                            {%if user.is_authenticated%}
+                                <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                            {% else %}
+                                  <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                                  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                            {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+            </header>
+
+            <article class="media content-section2">
+                <div class="media-body">
+
+                <main role="main" class="container">
+                    <div class="row">
+                    <div class="col-md-16">
+
+                        <h1 style="color: darkred; text-transform: capitalize">Welcome To Precision Farming System</h1>
+                            <section class="hearo-area">
+
+                                <!-- slider-area -->
+                                <div class="slider-wrapper">
+                                    <div class="active-slider owl-carousel">
+                                        <div class="slider-items bg-img-1">
+                                            <div class="sigle-item">
+                                                <h1>slider 1</h1>
+                                            </div>
+                                        </div>
+                                        <div class="slider-items bg-img-2">
+                                            <div class="sigle-item">
+                                                <h1>slider 2</h1>
+                                            </div>
+                                        </div>
+                                        <div class="slider-items bg-img-3">
+                                            <div class="sigle-item">
+                                                <h1>slider 3</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- slider-area-ends -->
+                            </section>
+                            <br>
+                            <br>
+
+                            <h1 style="color: darkred; text-transform: capitalize" class="heading">Kenya's No.1 Precision Agriculture Provider</h4>
+                            <p style="color: black; font: 23px; line-height: 26pt;">With a focus on soil health and applying spatial technology on farm, we work with farmers and their
+                               agronomists(County Governments) to optimise soil based farming operations.
+                               We collect, curate and interpret soil data that leads to the provision of application
+                               solutions delivered directly into the cabin of farm machinery. Growers can achieve
+                               improved yields, reduced costs and better environmental outcomes.</p>
+
+
+                            <!-- SERVICES START -->
+                            <div class="services-layer mb-5">
+                                <div class="container">
+                                    <div class="section-title">
+                                        <h3>Services</h3>
+                                        <h4>What Precision Farming Offers</h4>
+                                        <p>We have a wide variety of services so that our clients have good options.</p>
+                                    </div>
+                                    <div class="col-row">
+                                        <div class="col-md-12 col-lg-10 mx-auto">
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-6" data-aos="fade-up">
+                                                    <div class="service-box">
+                                                        <div class="media">
+                                                            <img src="../blog/static/img/icons/wheat.png" class="mr-3 sb-icon" alt="...">
+                                                            <div class="media-body sb-caption">
+                                                                <h4>Natural Wheats</h4>
+                                                                <p>Wheat as well as livestock updates on cattle rops and livestock from
+                                                                    Black producers.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6" data-aos="fade-up">
+                                                    <div class="service-box">
+                                                        <div class="media">
+                                                            <img src="blog/static/img/icons/carrot.png" class="mr-3 sb-icon" alt="...">
+                                                            <div class="media-body sb-caption">
+                                                                <h4>Fresh Vegetables</h4>
+                                                                <p>Crop and white farmers got most of the acreage allotments, which were
+                                                                    seemed.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6" data-aos="fade-up">
+                                                    <div class="service-box">
+                                                        <div class="media">
+                                                            <img src="blog/static/img/icons/fruits.png" class="mr-3 sb-icon" alt="...">
+                                                            <div class="media-body sb-caption">
+                                                                <h4>Fresh Fruits</h4>
+                                                                <p>Agriculture becomes more digitized, cybersecurity and data privacy
+                                                                    remain.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6" data-aos="fade-up">
+                                                    <div class="service-box">
+                                                        <div class="media">
+                                                            <img src="blog/static/img/icons/cow.png" class="mr-3 sb-icon" alt="...">
+                                                            <div class="media-body sb-caption">
+                                                                <h4>Healthy Livestock</h4>
+                                                                <p>Farmer’s data is managed is a journey all of agriculture is a part of
+                                                                    beef up our efforts.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6" data-aos="fade-up">
+                                                    <div class="service-box">
+                                                        <div class="media">
+                                                            <img src="blog/static/img/icons/tractor.png" class="mr-3 sb-icon" alt="...">
+                                                            <div class="media-body sb-caption">
+                                                                <h4>Modern Truck</h4>
+                                                                <p>We have a security checkpoint that asks if all procedures back for
+                                                                    further development.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6" data-aos="fade-up">
+                                                    <div class="service-box">
+                                                        <div class="media">
+                                                            <img src="blog/static/img/icons/barn.png" class="mr-3 sb-icon" alt="...">
+                                                            <div class="media-body sb-caption">
+                                                                <h4>Farm Plans</h4>
+                                                                <p>Grass widely cultivated for its seed, a cereal grain which is a
+                                                                    worldwide.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SERVICES END -->
+
+                            <div class="why-us-layer mt-5 mb-5">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="why-us-img-bg">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="why-us-left">
+                                            <div class="why-us-info">
+                                                <h2>WHY CHOOSE US</h2>
+                                                <p>Farming is becoming more scientific, with remote sensing, GPS and
+                                                   data analytics all being added to farming equipment. Thousands of farmers
+                                                   all over are adopting the new equipment to make their farming more precise.
+                                                   Tractors can map fields, drive themselves, and check its own motion within
+                                                   inches so it doesn’t waste fertilizer, seed or fuel.  Farming technology includes
+                                                   remote sensing with data collection on variables like nutrient levels and soil moisture.</p>
+                                                <p>Therefore, We provide leading solutions to agricultural and agroindustrial
+                                                    production through world-class products and services,
+                                                    always committed to meeting needs and expectations.</p>
+                                                <p>Promoting the continuous improvement of human and technological resources,
+                                                    generating competitive profitability.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="section-title">
+                                <h3>TESTIMONIALS</h3>
+                                <h4>HAPPY CLIENTS,.. Check What They Say About us.</h4>
+                                <p>"We have a team of professionals, dedicated to providing excellent service."</p>
+                            </div>
+                                <!----- Review Cards ----->
+                                <div class="cards">
+                                    <div class="card">
+                                        <img src="images/1.png">
+                                        <p>It’s an easy economic decision to make when you see those maps, and you see where you previously applied a flat rate that you didn’t need to apply anywhere near that amount.</p>
+                                        <h2>TIM RETHUS</h2>
+                                        <h4>BroadAcre Farmer</h4>
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+
+                                    <div class="card">
+                                        <img src="images/2.png">
+                                        <p>It’s a product anyone can use. You don’t need to understand it, just use your basic computer knowledge and test your fields.</p>
+                                        <h2>CHARLIE VALLANCE</h2>
+                                        <h4>Horticulture Farmer</h4>
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+
+                                    <div class="card">
+                                        <img src="images/3.png">
+                                        <p>We’ve managed to get that (fertiliser budget) down to about $90k, just by improving or putting on more fertilizer where its needed and a lot less where it’s not needed.</p>
+                                        <h2>MICHAEL NICHOLS</h2>
+                                        <h4>Horticulture Farmer</h4>
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+
+                                    <div class="card">
+                                        <img src="images/4.png">
+                                        <p>We do grid sampling using Precision Farming system and it’ll tell us exactly what our soil needs….it also produces a grid map which allows us to vary our rates of lime applications and as well as nutrients.</p>
+                                        <h2>SCHREURS & SONS</h2>
+                                        <h4>BroadAcre Farmer</h4>
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+                                </div>
+
+
+
+                        <!-- CONTACT START -->
+                        <div class="container mb-5 contact-form-layer">
+                            <div class="section-title">
+                                <h3>CONTACT</h3>
+                                <h4>KEEP IN TOUCH</h4>
+                                <p>We will be the leading company in the national market with each of our products.</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8 mx-auto">
+                                    <form id="contact-form" method="post" action="http://quickdevs.com/demo/farmey/contact.php">
+                                        <div class="messages"></div>
+                                        <div class="controls">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input id="form_name" type="text" name="name" class="form-control custom-form"
+                                                            placeholder="*Name" required="required" data-error="Firstname is required.">
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input id="form_email" type="email" name="email"
+                                                            class="form-control custom-form" placeholder="*Email address"
+                                                            required="required" data-error="Valid email is required.">
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <input id="form_phone" type="tel" name="phone" class="form-control custom-form"
+                                                            placeholder="*Please enter your phone">
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <textarea id="form_message" name="message"
+                                                            class="form-control message-form custom-form" placeholder="*Your message"
+                                                            rows="6" required="required"
+                                                            data-error="Please,leave us a message."></textarea>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-12 btn-send">
+                                                    <p><input type="submit" class="btn btn-default" value="Send Message"></p>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <p class="required">
+                                                        * These fields are required.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CONTACT END -->
+
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </article>
+            <!--beginning of bootstrap-->
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <!--end of bootstrap-->
+        </body>
+
+        <footer>
+             <div class="footer-content">Precision Farming 2022</div>
+        </footer>
+    </html>
+
+
+

@@ -81,3 +81,5 @@ def about(request):
     return render(request, 'blog/about.html', {'Title': 'About'})
 
 
+def prec(request):
+    return render(request, 'blog/prec.html', {'Title': 'Prec'})
