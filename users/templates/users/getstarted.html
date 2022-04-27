@@ -4,7 +4,6 @@
 <!DOCTYPE html>
     <html lang="en">
         <head>
-
             <!--beginning of bootstrap-->
             <!-- Required meta tags -->
             <meta charset="utf-8">
@@ -15,8 +14,6 @@
 
             <!--end of bootstrap-->
 
-
-
             <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
             {% if title %}
                 <title> Django Blog - {{ title }}</title>
@@ -25,6 +22,13 @@
             {% endif %}
             <meta charset="UTF-8">
 
+            <style>
+                body {
+                  background-image:url("../../media/Background.jpg");
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
+                }
+            </style>
         </head>
         <body>
                 <header class="site-header">
@@ -55,30 +59,38 @@
                     </div>
                   </nav>
                 </header>
-            <!--newdiv-->
-                 <main role="main" class="container">
-                   <div class="row">
-                    <div class="col-md-8">
-                        <!--flash message shown here
-                        means if django sees flash messages, then we can loop over those-->
-                        {% if messages %}
-                            {%for message in messages%}
-                                <div class="alert alert-{{message.tags}} ">
-                                    <!--in views.py of Users app, referred to messages.success after the "alert "-->
-                                    {{message}}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                       <iframe src = "https://www.google.com/maps" width="1200" height="700" style="border:none;"></iframe>
-                       <!--<button onclick="window.print();">CLICK HERE TO PRINT FORM!</button>-->
-                        <form action="{% url 'main-view' %}">
-                             <input type="submit" value="Next" />
-                        </form>
-                    </div>
-                  </div>
-                </main>
-                 <!--endofnewdiv-->
 
+
+                <article class="media content-section3">
+                    <div class="media-body">
+
+                        <!--newdiv-->
+                        <main role="main" class="container">
+                            <div class="row">
+                                <div class="col-md-16">
+                                    <!--flash message shown here
+                                    means if django sees flash messages, then we can loop over those-->
+                                    {% if messages %}
+                                        {%for message in messages%}
+                                            <div class="alert alert-{{message.tags}} ">
+                                                <!--in views.py of Users app, referred to messages.success after the "alert "-->
+                                                {{message}}
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    <iframe src = "https://www.google.com/maps" width="1100" height="700" style="border:none;"></iframe>
+                                    <!--<button onclick="window.print();">CLICK HERE TO PRINT FORM!</button>-->
+                                    <hr>
+                                    <form action="{% url 'main-view' %}">
+                                         <input type="submit" value="Next" />
+                                    </form>
+                                </div>
+                            </div>
+                        </main>
+                         <!--endofnewdiv-->
+
+                    </div>
+                </article>
 
             <!--beginning of bootstrap-->
             <!-- Optional JavaScript -->
@@ -88,4 +100,9 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
             <!--end of bootstrap-->
         </body>
+
+        <footer>
+             <div class="footer-content">Precision Farming 2022</div>
+        </footer>
+
     </html>
